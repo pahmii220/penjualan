@@ -63,4 +63,14 @@ class Kategori extends CI_Controller
         redirect('kategori');
     }
 
+    public function laporan()
+    {
+        $data = array(
+            'title' => 'Tambah Laporan Data Kategori',
+            'content' => 'kategori/laporan'
+        );
+        $this->load->view('template/main', $data);
+    }
+
+
 }

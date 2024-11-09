@@ -63,4 +63,13 @@ class Supplier extends CI_Controller
         redirect('supplier');
     }
 
+    public function laporan()
+    {
+        $data = array(
+            'title' => 'Tambah Laporan Data Supplier',
+            'content' => 'supplier/laporan'
+        );
+        $this->load->view('template/main', $data);
+    }
+
 }

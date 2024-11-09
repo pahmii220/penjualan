@@ -12,6 +12,8 @@ class Penjualan_model extends CI_Model
 
     public function save()
     {
+        $query = $this->db->query("SELECT IFNULL(MAX(id), 0) + 1 AS new_id FROM penjualan");
+        $new_id = $query->row()->new_id;
         $data = array(
             'invoice' => htmlspecialchars($this->input->post('invoice'), true),
             'total' => htmlspecialchars($this->input->post('total'), true),

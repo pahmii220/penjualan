@@ -1,31 +1,29 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Barang extends CI_Controller
+class pembelian extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Barang_model');
+        $this->load->model('Pembelian_model');
         $this->load->library('form_validation');
     }
     public function index()
     {
         $data = array(
-            'title' => 'View Data Barang',
+            'title' => 'View Data pembelian',
             'userlog' => infoLogin(),
-            'barang' => $this->Barang_model->getAll(),
-            'content' => 'barang/index'
+            'pembelian' => $this->Pembelian_model->getAll(),
+            'content' => 'pembelian/index'
         );
         $this->load->view('template/main', $data);
     }
     public function add()
     {
         $data = array(
-            'title' => 'Tambah Data Barang',
-            'kategori' => $this->db->get('kategori')->result_array(),
-            'satuan' => $this->db->get('satuan')->result_array(),
+            'title' => 'Tambah Data pembelian',
             'supplier' => $this->db->get('supplier')->result_array(),
-            'content' => 'barang/add_form',
+            'content' => 'pembelian/add_form',
 
         );
         $this->load->view('template/main', $data);
@@ -33,38 +31,37 @@ class Barang extends CI_Controller
 
     public function save()
     {
-        $this->Barang_model->save();
+        $this->Pembelian_model->save();
         if ($this->db->affected_rows() > 0) {
-            $this->session->set_flashdata("success", "Data Kategori Berhasil DiSimpan");
+            $this->session->set_flashdata("success", "Data Pembelian Berhasil DiSimpan");
         }
-        redirect('barang');
+        redirect('pembelian');
     }
 
     public function edit()
     {
-        $this->Barang_model->editData();
+        $this->Pembelian_model->editData();
         if ($this->db->affected_rows() > 0) {
-            $this->session->set_flashdata("success", "Data barang Berhasil Diupdate");
+            $this->session->set_flashdata("success", "Data pembelian Berhasil Diupdate");
         }
-        redirect('barang');
+        redirect('pembelian');
     }
 
     public function getedit($id)
     {
         $data = array(
-            'title' => 'Update Data Kategori',
-            'kategori' => $this->db->get('kategori')->result_array(),
-            'satuan' => $this->db->get('satuan')->result_array(),
+            'title' => 'Update Data pembelian',
             'supplier' => $this->db->get('supplier')->result_array(),
-            'barang' => $this->Barang_model->getById($id),
-            'content' => 'barang/edit_form'
+            'pembelian' => $this->Pembelian_model->getById($id),
+            'content' => 'pembelian/edit_form'
         );
         $this->load->view('template/main', $data);
     }
 
     function delete($id)
     {
-        $this->Barang_model->delete($id);
-        redirect('barang');
+        $this->Pembelian_model->delete($id);
+        redirect('pembelian');
     }
+
 }

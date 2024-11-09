@@ -61,7 +61,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="<?php echo site_url('laporan/penjualan'); ?>">
                                         Laporan Penjualan</a>
-                                    <a class="nav-link" href="<?php echo site_url('laporan/barang'); ?>">
+                                    <a class="nav-link" href="<?php echo site_url('barang/laporan'); ?>">
                                         Laporan Barang</a>
                                     <a class="nav-link" href="<?php echo site_url('laporan/stok'); ?>">
                                         Laporan Stok</a> <a class="nav-link"
@@ -69,8 +69,18 @@
                                         Laporan Pembelian</a>
                                     <a class="nav-link" href="<?php echo site_url('laporan/return'); ?>">
                                         Stok Barang</a>
-                                    <a class="nav-link" href="<?php echo site_url('kustomer/kustomerlap'); ?>">
+                                    <a class="nav-link" href="<?php echo site_url('kategori/laporan'); ?>">
+                                        Kategori</a>
+                                    <a class="nav-link" href="<?php echo site_url('user/laporan'); ?>">
+                                        User</a>
+                                    <a class="nav-link" href="<?php echo site_url('kustomer/laporan'); ?>">
                                         Kustomer</a>
+                                    <a class="nav-link" href="<?php echo site_url('satuan/laporan'); ?>">
+                                        Satuan</a>
+                                    <a class="nav-link" href="<?php echo site_url('supplier/laporan'); ?>">
+                                        Supplier</a>
+                                    <a class="nav-link" href="<?php echo site_url('barang/laporan'); ?>">
+                                        Barang</a>
                                 </nav>
                             </div>
                         </nav>

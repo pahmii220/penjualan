@@ -57,4 +57,14 @@ class User extends CI_Controller
         $this->User_model->delete($id);
         redirect('user');
     }
+    
+        public function laporan()
+    {
+        $data = array(
+            'title' => 'Tambah Laporan Data user',
+            'content' => 'user/laporan'
+        );
+        $this->load->view('template/main', $data);
+    }
+    
 }

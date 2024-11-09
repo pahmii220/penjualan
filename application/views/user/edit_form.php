@@ -50,6 +50,6 @@
                 </form>
             </div>
         </div>
-        <div style="height: 100vh"></div>
+        <div style="height: 50vh"></div>
     </div>
 </main>
